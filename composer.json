@@ -1,0 +1,14 @@
+{
+    "name": "antony_kalogeropoulos/trehouse_php",
+    "description": "Creating a php site using treehouse and composer",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Antony",
+            "email": "anthonykalogeropoulos@gmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^1.13"
+    }
+}
