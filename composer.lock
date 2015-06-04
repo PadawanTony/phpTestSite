@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ce7d7922b848d3498d9d135961af62d7",
+    "hash": "7bf5d519f705716f8153f02fa00e25b0",
     "packages": [
         {
             "name": "monolog/monolog",
