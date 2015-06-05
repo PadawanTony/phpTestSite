@@ -12,19 +12,32 @@ date_default_timezone_set('Europe/Athens');
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
-$app = new \Slim\Slim();
-
+//Uncomment these 4 lines to use Logger
 // $log = new Logger('name');  //Because of the use statement, Logger is equal to Monolog\Logger
 // $log->pushHandler(new StreamHandler('app.txt', Logger::WARNING));
 // $log->addWarning('Oh No!');
 
+$app = new \Slim\Slim( array(
+	'view' => new \Slim\Views\Twig()
+));
+
+
+$view = $app->view();
+$view->parserOptions = array(
+	'debug' => true,
+);
+$view->parserExtensions = array(
+	new \Slim\Views\TwigExtension(),
+);
+
+
 $app->get('/', function() use($app) {
-	$app->render('index.html');
+	$app->render('about.twig');
+});
+$app->get('/contact', function() use($app) {
+	$app->render('contact.twig');
 });
 
-$app->get('/contact', function() use($app) {
-	$app->render('contact.html');
-});
 
 $app->run();
 
