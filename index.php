@@ -18,8 +18,12 @@ $app = new \Slim\Slim();
 // $log->pushHandler(new StreamHandler('app.txt', Logger::WARNING));
 // $log->addWarning('Oh No!');
 
-$app->get('/hello/:name', function ($name) {
-	echo "Hello, $name";
+$app->get('/', function() use($app) {
+	$app->render('index.html');
+});
+
+$app->get('/contact', function() use($app) {
+	$app->render('contact.html');
 });
 
 $app->run();
